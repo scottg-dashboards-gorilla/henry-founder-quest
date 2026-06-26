@@ -4,7 +4,7 @@ A self-paced, hands-on game for learning **Claude Code & Cowork** by building a 
 
 ## ▶️ Play it
 
-**Live site:** _(GitHub Pages link appears here once enabled)_
+**▶️ Live site: https://scottg-dashboards-gorilla.github.io/henry-founder-quest/**
 
 1. Open the site and **take the assessment** (`assessment.html`).
 2. Copy the **Mission Briefing** it generates.
@@ -18,5 +18,6 @@ A self-paced, hands-on game for learning **Claude Code & Cowork** by building a 
 | `index.html` | Landing page — start here |
 | `assessment.html` | The onboarding quiz that generates the Mission Briefing |
 | `guidebook.html` | The game: 7 levels + a final boss |
+| `certificate.html` | Printable Certificate of Completion, earned by beating the boss |
 
 Built for Henry · stretch-challenge mode.
