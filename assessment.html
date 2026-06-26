@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Founder Quest — Onboarding Assessment</title>
+<style>
+  :root{
+    --bg:#0b1020; --panel:#141b30; --panel2:#1b2440; --ink:#e9edf7; --muted:#9aa6c4;
+    --accent:#6c7bff; --accent2:#36e0c4; --gold:#ffce4f; --line:#27304f; --danger:#ff6b8a;
+  }
+  *{box-sizing:border-box}
+  body{margin:0;font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+    background:radial-gradient(1200px 700px at 80% -10%,#1a2240 0,transparent 60%),
+    radial-gradient(1000px 600px at -10% 110%,#171f3a 0,transparent 55%),var(--bg);
+    color:var(--ink);line-height:1.5;padding:0 0 80px}
+  .wrap{max-width:880px;margin:0 auto;padding:0 20px}
+  header.hero{padding:54px 0 24px;text-align:center}
+  .badge{display:inline-block;font-size:12px;letter-spacing:.18em;text-transform:uppercase;
+    color:var(--accent2);border:1px solid var(--line);border-radius:999px;padding:6px 14px;margin-bottom:18px}
+  h1{font-size:40px;margin:0 0 8px;background:linear-gradient(90deg,#fff,#9fb0ff);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent}
+  .sub{color:var(--muted);max-width:620px;margin:0 auto;font-size:16px}
+  .progress{height:8px;background:var(--panel2);border-radius:999px;margin:28px 0 8px;overflow:hidden}
+  .progress > i{display:block;height:100%;width:0;background:linear-gradient(90deg,var(--accent),var(--accent2));transition:width .4s ease}
+  .pmeta{display:flex;justify-content:space-between;font-size:12px;color:var(--muted);margin-bottom:24px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:26px 26px 22px;margin-bottom:18px;
+    box-shadow:0 18px 40px -28px #000}
+  .card h2{margin:0 0 4px;font-size:20px}
+  .card .q-sub{color:var(--muted);font-size:14px;margin:0 0 16px}
+  label.opt{display:flex;gap:12px;align-items:flex-start;border:1px solid var(--line);border-radius:12px;
+    padding:13px 14px;margin:8px 0;cursor:pointer;transition:.15s;background:var(--panel2)}
+  label.opt:hover{border-color:var(--accent)}
+  label.opt input{margin-top:3px;accent-color:var(--accent)}
+  label.opt .t{font-weight:600}
+  label.opt .d{color:var(--muted);font-size:13px}
+  label.opt.sel{border-color:var(--accent2);box-shadow:0 0 0 1px var(--accent2) inset}
+  textarea,input[type=text]{width:100%;background:var(--panel2);border:1px solid var(--line);border-radius:12px;
+    color:var(--ink);padding:13px 14px;font-size:15px;font-family:inherit;resize:vertical}
+  textarea:focus,input:focus{outline:none;border-color:var(--accent)}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px}
+  .chip{border:1px solid var(--line);background:var(--panel2);border-radius:999px;padding:7px 13px;cursor:pointer;font-size:13px;transition:.15s}
+  .chip:hover{border-color:var(--accent)}
+  .chip.sel{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#0b1020;border-color:transparent;font-weight:700}
+  .actions{display:flex;justify-content:space-between;gap:12px;margin-top:6px}
+  button{font-family:inherit;font-size:15px;font-weight:700;border-radius:12px;border:1px solid var(--line);
+    padding:12px 22px;cursor:pointer;background:var(--panel2);color:var(--ink);transition:.15s}
+  button:hover{border-color:var(--accent)}
+  button.primary{background:linear-gradient(90deg,var(--accent),var(--accent2));color:#0b1020;border:none}
+  button:disabled{opacity:.4;cursor:not-allowed}
+  .hide{display:none}
+  .result pre{white-space:pre-wrap;background:#0a0f1f;border:1px solid var(--line);border-radius:14px;padding:20px;
+    font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:13.5px;color:#d4ddff;max-height:520px;overflow:auto}
+  .copybar{display:flex;gap:10px;margin-top:14px;flex-wrap:wrap}
+  .note{font-size:13px;color:var(--muted);margin-top:14px;border-left:3px solid var(--accent2);padding-left:12px}
+  .xp{display:inline-flex;align-items:center;gap:6px;color:var(--gold);font-weight:700;font-size:13px}
+  .footer{text-align:center;color:var(--muted);font-size:12px;margin-top:30px}
+  .toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:var(--accent2);color:#0b1020;
+    padding:12px 20px;border-radius:12px;font-weight:700;opacity:0;transition:.3s;pointer-events:none}
+  .toast.show{opacity:1}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="hero">
+    <span class="badge">◆ Founder Quest · Onboarding</span>
+    <h1>Build a Business with Claude</h1>
+    <p class="sub">A self-paced, hands-on quest to master Claude Code &amp; Cowork — by actually building a real business, website, and AI workforce. Answer honestly. Your answers generate the mission briefing you'll hand to Claude to begin.</p>
+  </header>
+
+  <div class="progress"><i id="bar"></i></div>
+  <div class="pmeta"><span id="step-label">Step 1 of 8</span><span class="xp">★ <span id="xp">0</span> XP to unlock briefing</span></div>
+
+  <form id="quiz"></form>
+
+  <div id="result" class="card result hide">
+    <h2>🗝️ Your Mission Briefing is ready</h2>
+    <p class="q-sub">Copy everything below. Open Claude Code (or Cowork), paste it as your very first message, and the quest begins. Claude becomes your Guide — it will pose challenges and coach you, but <b>you</b> do the building.</p>
+    <pre id="briefing"></pre>
+    <div class="copybar">
+      <button class="primary" type="button" onclick="copyBrief()">📋 Copy Briefing</button>
+      <button type="button" onclick="downloadBrief()">⬇ Download as .txt</button>
+      <button type="button" onclick="restart()">↺ Start Over</button>
+    </div>
+    <p class="note">Tip: keep this briefing somewhere safe. It's your "save file." If Claude ever loses the thread, paste it again to re-orient.</p>
+  </div>
+
+  <div class="footer">Founder Quest v1 · built for Henry · stretch-challenge mode engaged</div>
+</div>
+<div class="toast" id="toast">Copied!</div>
+
+<script>
+const QUESTIONS = [
+  {
+    id:"name", type:"text",
+    title:"First, who's the founder?",
+    sub:"Your name — this goes on the briefing and the certificate at the end.",
+    placeholder:"Henry"
+  },
+  {
+    id:"why", type:"single",
+    title:"What pulls you toward learning Claude Code & Cowork?",
+    sub:"Be honest — it shapes how hard the Guide pushes you.",
+    options:[
+      {v:"edge",t:"Career edge",d:"I want this on my resume and in my hands before I hit the job market."},
+      {v:"build",t:"I love building things",d:"I'd rather make something real than read about it."},
+      {v:"finance",t:"Supercharge my finance/accounting skills",d:"I want to automate the analytical work I'm trained for."},
+      {v:"curious",t:"Pure curiosity",d:"AI agents are the future and I want to actually understand them."}
+    ]
+  },
+  {
+    id:"level", type:"single",
+    title:"Honest self-rating: how comfortable are you in a terminal / with code?",
+    sub:"No wrong answer. The Guide calibrates hints to this.",
+    options:[
+      {v:"new",t:"New to it",d:"I've barely touched a command line."},
+      {v:"some",t:"Some exposure",d:"I've run a few commands, edited some files, maybe a little Python/Excel macros."},
+      {v:"comfy",t:"Comfortable",d:"I can navigate, edit, run scripts, and read errors without panicking."}
+    ]
+  },
+  {
+    id:"time", type:"single",
+    title:"How much time per week can you realistically give this?",
+    sub:"Sets the pace of the campaign.",
+    options:[
+      {v:"light",t:"~3–4 hrs",d:"Evenings here and there."},
+      {v:"medium",t:"~6–8 hrs",d:"A couple of solid sessions a week."},
+      {v:"heavy",t:"10+ hrs",d:"I'm treating this like a real project."}
+    ]
+  },
+  {
+    id:"biztype", type:"single",
+    title:"What kind of business do you want to build in the game?",
+    sub:"This is the spine of the whole quest. Pick what genuinely excites you — you'll live in it for weeks.",
+    options:[
+      {v:"service",t:"Local service marketplace",d:"e.g. connect homeowners with vetted contractors, tutors, dog walkers."},
+      {v:"ecom",t:"Niche e-commerce / product brand",d:"e.g. specialty coffee, custom gear, a curated shop."},
+      {v:"saas",t:"A software tool (SaaS)",d:"e.g. a budgeting app, a scheduling tool, an analytics dashboard people pay for."},
+      {v:"fintech",t:"Finance / money tool",d:"e.g. an investment tracker, a small-business CFO service, an expense analyzer (leans on your degree)."},
+      {v:"content",t:"Content / media brand",d:"e.g. a newsletter, a review site, a niche community with a storefront."},
+      {v:"own",t:"My own idea (I'll describe it)",d:"I already have something in mind."}
+    ]
+  },
+  {
+    id:"bizidea", type:"text",
+    title:"Describe your business in one or two sentences.",
+    sub:"Who's it for, and what does it do for them? Don't overthink — you'll refine it with the Guide.",
+    placeholder:"e.g. 'CampusCFO' — a tool that helps college students track spending, split bills, and build a budget that actually fits a student income."
+  },
+  {
+    id:"learn", type:"multi",
+    title:"Which Claude capabilities are you most hungry to master?",
+    sub:"Pick as many as you want — the Guide will make sure your business naturally forces you to use each one. (Don't worry if you don't know what they all mean yet.)",
+    options:[
+      {v:"skills","t":"Building & saving Skills","d":"Teaching Claude reusable workflows."},
+      {v:"memory",t:"Memory",d:"Making Claude remember your business, your style, your decisions."},
+      {v:"agents",t:"Agents & subagents",d:"Delegating work to specialized AI workers."},
+      {v:"mcp",t:"Connectors (MCP)",d:"Plugging Claude into real tools — Gmail, Drive, payments, etc."},
+      {v:"artifacts",t:"Artifacts & dashboards",d:"Live, reopenable pages that pull fresh data."},
+      {v:"design",t:"Design & websites",d:"Building a real, good-looking site and brand."},
+      {v:"data",t:"Data & spreadsheets",d:"Financial models, analysis, automated reports."},
+      {v:"schedule",t:"Automation / scheduled tasks",d:"Work that runs on its own each day or week."}
+    ]
+  },
+  {
+    id:"motivator", type:"single",
+    title:"Last one. What makes you want to keep going when something's hard?",
+    sub:"The Guide uses this to keep you hooked.",
+    options:[
+      {v:"win",t:"Visible wins",d:"Show me the thing working and I'm energized."},
+      {v:"master",t:"Mastery",d:"I want to deeply understand why it works."},
+      {v:"compete",t:"Competition / scoring",d:"Give me points, levels, and a boss to beat."},
+      {v:"real",t:"Real stakes",d:"Make it feel like a business someone would actually use."}
+    ]
+  }
+];
+
+let answers={}, idx=0, multiState={};
+const form=document.getElementById('quiz');
+
+function render(){
+  const q=QUESTIONS[idx];
+  document.getElementById('step-label').textContent=`Step ${idx+1} of ${QUESTIONS.length}`;
+  document.getElementById('bar').style.width=`${(idx)/(QUESTIONS.length)*100}%`;
+  document.getElementById('xp').textContent=Object.keys(answers).filter(k=>answers[k]&&answers[k].length).length*12;
+
+  let html=`<div class="card"><h2>${q.title}</h2><p class="q-sub">${q.sub}</p>`;
+  if(q.type==="text"){
+    const val=answers[q.id]||"";
+    if(q.id==="bizidea"||q.id==="name"){
+      html+=`<input type="text" id="inp" placeholder="${q.placeholder}" value="${val.replace(/"/g,'&quot;')}">`;
+    }
+  }
+  if(q.type==="single"){
+    q.options.forEach(o=>{
+      const sel=answers[q.id]===o.v?"sel":"";
+      html+=`<label class="opt ${sel}" data-v="${o.v}">
+        <input type="radio" name="${q.id}" ${answers[q.id]===o.v?"checked":""}>
+        <span><span class="t">${o.t}</span><br><span class="d">${o.d}</span></span></label>`;
+    });
+  }
+  if(q.type==="multi"){
+    const cur=multiState[q.id]||[];
+    q.options.forEach(o=>{
+      const sel=cur.includes(o.v)?"sel":"";
+      html+=`<label class="opt ${sel}" data-v="${o.v}">
+        <input type="checkbox" ${sel?"checked":""}>
+        <span><span class="t">${o.t}</span><br><span class="d">${o.d}</span></span></label>`;
+    });
+  }
+  html+=`<div class="actions">
+    <button type="button" onclick="prev()" ${idx===0?"disabled":""}>← Back</button>
+    <button type="button" class="primary" id="nextBtn" onclick="next()">${idx===QUESTIONS.length-1?"🏁 Generate Briefing":"Next →"}</button>
+  </div></div>`;
+  form.innerHTML=html;
+
+  if(q.type==="single"){
+    form.querySelectorAll("label.opt").forEach(l=>{
+      l.onclick=e=>{ if(e.target.tagName!=="INPUT"){l.querySelector("input").checked=true;}
+        answers[q.id]=l.dataset.v;
+        form.querySelectorAll("label.opt").forEach(x=>x.classList.remove("sel"));
+        l.classList.add("sel"); };
+    });
+  }
+  if(q.type==="multi"){
+    multiState[q.id]=multiState[q.id]||[];
+    form.querySelectorAll("label.opt").forEach(l=>{
+      l.onclick=e=>{ const v=l.dataset.v; const arr=multiState[q.id];
+        const i=arr.indexOf(v);
+        if(i>=0){arr.splice(i,1);l.classList.remove("sel");l.querySelector("input").checked=false;}
+        else{arr.push(v);l.classList.add("sel");l.querySelector("input").checked=true;}
+        answers[q.id]=arr; };
+    });
+  }
+  if(q.type==="text"){
+    const inp=document.getElementById("inp");
+    inp.oninput=()=>{answers[q.id]=inp.value;};
+    setTimeout(()=>inp.focus(),60);
+  }
+}
+
+function next(){
+  const q=QUESTIONS[idx];
+  if(q.type==="text"&&q.id==="name"&&!(answers.name&&answers.name.trim())){shake();return;}
+  if(idx<QUESTIONS.length-1){idx++;render();}
+  else{finish();}
+}
+function prev(){if(idx>0){idx--;render();}}
+function shake(){const b=document.getElementById("nextBtn");b.animate([{transform:"translateX(0)"},{transform:"translateX(-6px)"},{transform:"translateX(6px)"},{transform:"translateX(0)"}],{duration:240});}
+
+const BIZ={service:"a local service marketplace",ecom:"a niche e-commerce / product brand",saas:"a software (SaaS) tool",fintech:"a finance / money tool",content:"a content / media brand",own:"their own custom idea"};
+const LEARN_LABEL={skills:"Building & saving Skills",memory:"Memory",agents:"Agents & subagents",mcp:"Connectors (MCP)",artifacts:"Artifacts & dashboards",design:"Design & websites",data:"Data & spreadsheets",schedule:"Automation / scheduled tasks"};
+const LEVEL={new:"new to the terminal/code",some:"some exposure to code",comfy:"comfortable with code"};
+const TIME={light:"~3–4 hrs/week",medium:"~6–8 hrs/week",heavy:"10+ hrs/week"};
+const WHY={edge:"career edge",build:"loves building real things",finance:"wants to supercharge finance/accounting skills",curious:"pure curiosity about AI agents"};
+const MOT={win:"visible wins",master:"deep mastery",compete:"competition & scoring",real:"real stakes"};
+
+function finish(){
+  const name=(answers.name||"Henry").trim();
+  const learn=(answers.learn||[]).map(v=>LEARN_LABEL[v]).join(", ")||"all of them";
+  const biz=BIZ[answers.biztype]||"their own idea";
+  const idea=(answers.bizidea||"").trim()||"(to be defined with the Guide in Level 0)";
+  const brief=
+`================ FOUNDER QUEST — MISSION BRIEFING ================
+Paste this as your FIRST message to Claude (Claude Code or Cowork).
+
+ROLE FOR YOU, CLAUDE:
+You are my GUIDE in a hands-on game called "Founder Quest." I am ${name},
+the founder. Across a series of LEVELS, I am going to build a real business
+end-to-end using Claude Code and Cowork: skills, memory, agents, MCP
+connectors, artifacts/dashboards, and a real designed website.
+
+THE GOLDEN RULE: You COACH, I BUILD. Never write the whole solution for me.
+Pose the challenge, then make me do the work. When I'm stuck, give me ONE
+hint at a time (escalate only if I ask again). Celebrate wins, award XP,
+and keep score. Push me — I've chosen STRETCH / CHALLENGE mode.
+
+ABOUT ME:
+- Founder: ${name}
+- Motivation: ${WHY[answers.why]||"building"}
+- Coding comfort: ${LEVEL[answers.level]||"some exposure"}
+- Time budget: ${TIME[answers.time]||"~6–8 hrs/week"}
+- Keeps going because of: ${MOT[answers.motivator]||"visible wins"}
+- Most wants to master: ${learn}
+
+THE BUSINESS:
+- Type: ${biz}
+- Idea: ${idea}
+
+HOW TO RUN THE GAME:
+1. Start with LEVEL 0 (Found Your Company): help me sharpen the idea, name it,
+   and set up a project folder + a memory file so you "remember" my business.
+2. Then walk me through the levels in the Founder Quest Guidebook (I have it).
+   For each level: state the mission, the victory condition, and the FIRST
+   small step. Then wait for me to act.
+3. After each level, award XP, summarize what I learned, and update my memory
+   file so progress persists.
+4. If I try to get you to just do it for me, gently refuse and hand the work
+   back with a hint.
+
+Begin with a short, hype welcome, confirm my business idea back to me, then
+launch LEVEL 0. Let's build.
+=================================================================`;
+  document.getElementById('briefing').textContent=brief;
+  form.classList.add('hide');
+  document.querySelector('.progress').style.display='none';
+  document.querySelector('.pmeta').style.display='none';
+  document.getElementById('bar').style.width='100%';
+  document.getElementById('result').classList.remove('hide');
+  document.getElementById('result').scrollIntoView({behavior:"smooth"});
+}
+
+function copyBrief(){navigator.clipboard.writeText(document.getElementById('briefing').textContent).then(toast);}
+function toast(){const t=document.getElementById('toast');t.classList.add('show');setTimeout(()=>t.classList.remove('show'),1400);}
+function downloadBrief(){
+  const blob=new Blob([document.getElementById('briefing').textContent],{type:"text/plain"});
+  const a=document.createElement('a');a.href=URL.createObjectURL(blob);a.download="founder-quest-briefing.txt";a.click();
+}
+function restart(){answers={};multiState={};idx=0;
+  document.getElementById('result').classList.add('hide');
+  form.classList.remove('hide');
+  document.querySelector('.progress').style.display='';
+  document.querySelector('.pmeta').style.display='';
+  render();window.scrollTo({top:0,behavior:"smooth"});}
+
+render();
+</script>
+</body>
+</html>
