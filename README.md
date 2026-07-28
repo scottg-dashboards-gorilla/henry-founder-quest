@@ -17,7 +17,7 @@ A self-paced, hands-on game for learning **Claude Code & Cowork** by building a 
 |------|-----------|
 | `index.html` | Landing page — start here |
 | `assessment.html` | The onboarding quiz that generates the Mission Briefing |
-| `guidebook.html` | The game: 7 levels + a final boss |
+| `guidebook.html` | The game: 10 levels + a final boss (full Cowork capability coverage) |
 | `certificate.html` | Printable Certificate of Completion, earned by beating the boss |
 
 Built for Henry · stretch-challenge mode.
