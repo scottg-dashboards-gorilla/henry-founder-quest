@@ -2,7 +2,6 @@
 <html lang="en"><head><meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Founder Quest — Guidebook</title>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/marked/12.0.0/marked.min.js"></script>
 <style>
 :root{--bg:#0b1020;--panel:#141b30;--ink:#e9edf7;--muted:#9aa6c4;--accent:#6c7bff;--accent2:#36e0c4;--gold:#ffce4f;--line:#27304f;}
 *{box-sizing:border-box}
@@ -28,10 +27,252 @@ body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,Bl
 .md strong{color:#fff}
 </style></head>
 <body>
-<div class="top"><a href="index.html">← Home</a><a href="assessment.html">Take the Assessment</a></div>
-<div class="md" id="content"></div>
-<script>
-const SRC = "# \ud83c\udfc6 FOUNDER QUEST\n### A hands-on game for mastering Claude Code & Cowork by building a real business\n\n> **For:** Henry\n> **Mode:** Stretch / Challenge\n> **The deal:** Claude is your *Guide*. It poses the challenge and coaches you \u2014 but **you** do the building. Every level you clear, you earn XP, level up your company, and unlock a harder one. Beat the final boss and your business is *live*.\n\n---\n\n## How this game works\n\nYou are the **Founder**. Claude is your **Guide** (think: a sharp co-founder who refuses to do your homework for you).\n\n**The loop, every single level:**\n1. The Guide states the **Mission** and the **Victory Condition**.\n2. The Guide gives you the **first small step** \u2014 then waits.\n3. **You** try it. You get stuck. That's the point.\n4. You ask for a hint. The Guide gives you **one** hint. Still stuck? Ask again for the next.\n5. You clear the Victory Condition \u2192 **XP awarded**, memory updated, next level unlocks.\n\n**The Golden Rule (the Guide is told this in your briefing):**\n> Coach, don't solve. One hint at a time. Make the founder do the work.\n\n**Scoring:**\n- Each level has a base XP value.\n- \u26a1 **Solo bonus** (+50%): cleared a level without asking for more than one hint.\n- \ud83e\udde0 **Teach-back bonus** (+25%): explain to the Guide *why* your solution works, in your own words.\n- \ud83c\udf96\ufe0f Hit XP milestones to earn **Founder Ranks** (see bottom).\n\n**The 7 building blocks you'll master** (each level forces at least one):\n`Skills` \u00b7 `Memory` \u00b7 `Agents/Subagents` \u00b7 `Connectors (MCP)` \u00b7 `Artifacts/Dashboards` \u00b7 `Design/Website` \u00b7 `Automation (Scheduled Tasks)`\n\n---\n\n# \ud83d\uddfa\ufe0f THE CAMPAIGN\n\n```\nLVL 0  Found Your Company        \u2192  Memory                     (warmup)\nLVL 1  Teach Claude Your Craft   \u2192  Skills                     \u25cf\nLVL 2  Hire Your First Agent     \u2192  Agents/Subagents           \u25cf\u25cf\nLVL 3  Wire Up the Real World    \u2192  Connectors (MCP)           \u25cf\u25cf\nLVL 4  The Living Dashboard      \u2192  Artifacts                  \u25cf\u25cf\u25cf\nLVL 5  Build the Storefront      \u2192  Design / Website           \u25cf\u25cf\u25cf\nLVL 6  The Night Shift           \u2192  Automation                 \u25cf\u25cf\u25cf\n\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\u2500\nBOSS   Launch Day                \u2192  Everything, together       \u25cf\u25cf\u25cf\u25cf\u25cf\n```\n\n---\n\n## \ud83e\udded LEVEL 0 \u2014 FOUND YOUR COMPANY\n**Block: Memory \u00b7 100 XP \u00b7 Difficulty \u25cf**\n\n**The story.** Every empire starts with a name and a clear reason to exist. Before you build anything, your Guide needs to *remember* who you are and what you're building \u2014 across every future session.\n\n**Mission**\n- Sharpen your business idea with the Guide into one crisp sentence (the \"north star\").\n- Name the company. Pick a one-line value proposition and your target customer.\n- Create a project folder and a **memory file** (e.g. `CLAUDE.md` / a memory note) that captures: company name, what it does, who it's for, your brand vibe, and your decisions so far.\n\n**Victory Condition**\n\u2705 You can start a brand-new chat, say \"what's my company?\", and the Guide recalls it correctly *from the memory file* \u2014 not from the conversation.\n\n**Your first step (the Guide gives you this):** Tell the Guide your rough idea. Let it interview you with 5 sharp questions. Then *you* write the memory file.\n\n**Stretch challenge.** Add a \"Decisions Log\" section to your memory file and make a rule: every time you make a real choice (pricing, name, tech), you append one line. This is how pros keep an AI aligned over months.\n\n**Teach-back:** Explain to the Guide *why* a memory file beats just having a long conversation.\n\n---\n\n## \u2692\ufe0f LEVEL 1 \u2014 TEACH CLAUDE YOUR CRAFT\n**Block: Skills \u00b7 150 XP \u00b7 Difficulty \u25cf**\n\n**The story.** You'll do the same kinds of tasks over and over \u2014 write a customer email, draft a product description, format a weekly numbers update. A *Skill* is you teaching Claude a repeatable workflow once, so it nails it every time.\n\n**Mission**\n- Identify one task your business will need *constantly*.\n- Build a **Skill** that captures how *you* want it done \u2014 your voice, your format, your rules.\n- Save it so it triggers automatically when relevant.\n- Use it twice on two different inputs and confirm consistent, on-brand output.\n\n**Victory Condition**\n\u2705 A saved Skill that fires on the right request and produces output in your defined format \u2014 without you re-explaining the rules each time.\n\n**Your first step:** Pick the task. Tell the Guide. It will help you find the *skill-creator* tooling \u2014 but **you** write the skill's instructions and examples.\n\n**Stretch challenge.** Give the Skill at least one \"do NOT\" rule and one worked example, then deliberately feed it a tricky input to see if it holds the line.\n\n**Teach-back:** What's the difference between a Skill and just a really good one-off prompt?\n\n---\n\n## \ud83e\udd16 LEVEL 2 \u2014 HIRE YOUR FIRST AGENT\n**Block: Agents / Subagents \u00b7 200 XP \u00b7 Difficulty \u25cf\u25cf**\n\n**The story.** A founder can't do everything. You delegate. An **agent** (subagent) is a specialized AI worker you hand a self-contained job to \u2014 it goes off, does the research or the grunt work, and reports back, without cluttering your main thread.\n\n**Mission**\n- Find a chunky, self-contained job your business needs (e.g. \"research my 5 closest competitors and summarize their pricing,\" or \"audit this list of 50 product names for trademark risk\").\n- Launch an **agent** to do it.\n- Get back a clean, usable deliverable \u2014 and save it into your project.\n\n**Victory Condition**\n\u2705 An agent ran an independent multi-step task and returned a result you actually use in your business (saved to a file, fed into a decision).\n\n**Your first step:** Define the job in one paragraph so tight that a worker who knows nothing about your company could run it. (This is the real skill \u2014 writing the brief.)\n\n**Stretch challenge.** Run **two agents in parallel** on two different jobs and have the Guide help you combine their outputs. Notice how much faster that is than doing it serially.\n\n**Teach-back:** When is it worth spinning up an agent vs. just asking the Guide directly?\n\n---\n\n## \ud83d\udd0c LEVEL 3 \u2014 WIRE UP THE REAL WORLD\n**Block: Connectors (MCP) \u00b7 200 XP \u00b7 Difficulty \u25cf\u25cf**\n\n**The story.** Right now your business lives in a folder. Real businesses touch real tools \u2014 email, calendars, files, payments, a CRM. **Connectors (MCP)** plug Claude into those tools so it can read and act on live data.\n\n**Mission**\n- Decide which *one* real tool your business most needs Claude connected to. (Examples: Gmail to handle inbound, Google Drive/Calendar for ops, a payments or accounting tool for the money side \u2014 lean on your finance brain here.)\n- Use the connector registry to **find and connect** it. (Ask the Guide to search available connectors \u2014 don't assume; verify what's actually offered.)\n- Do one real thing through it: read your latest emails, pull events, draft (not send) a message, list files.\n\n**Victory Condition**\n\u2705 Claude successfully pulled or acted on **live data** from a connected external tool, and you used it for a business purpose.\n\n**Your first step:** Name the tool and the exact task. The Guide will help you search the registry \u2014 but **you** decide what's worth connecting and why.\n\n**Stretch challenge.** Find a connector you *didn't* know existed that could give your business an edge, and write one sentence in your Decisions Log about how you'd use it.\n\n\u26a0\ufe0f **Safety rule (real-world habit):** never let an agent *send* money, place orders, or send mass emails unattended. Read, draft, and analyze freely \u2014 but you press the final button. Tell the Guide you know this rule.\n\n**Teach-back:** Why is \"Claude connected to your real tools\" a bigger deal than \"Claude that writes good text\"?\n\n---\n\n## \ud83d\udcca LEVEL 4 \u2014 THE LIVING DASHBOARD\n**Block: Artifacts / Dashboards \u00b7 250 XP \u00b7 Difficulty \u25cf\u25cf\u25cf**\n\n**The story.** A founder needs a cockpit \u2014 one screen that shows the health of the business and refreshes itself. An **artifact** is a self-contained page Claude builds that *persists* and can pull fresh data every time you open it.\n\n**Mission**\n- Design a one-page **dashboard** for your business: the 3\u20135 numbers or lists that actually matter (revenue, signups, open tasks, top customers \u2014 whatever fits your business).\n- Build it as a live artifact. If you cleared Level 3, wire at least one tile to **real connector data**. If not, mock the data cleanly.\n- Make it look *good*, not just functional.\n\n**Victory Condition**\n\u2705 A reopenable dashboard that shows your business's key metrics, with at least one element that updates from a data source (live or simulated) \u2014 and that you'd genuinely glance at each morning.\n\n**Your first step:** On paper, sketch the 4 tiles. Defend each one to the Guide: \"why does this number matter?\" Kill any vanity metric.\n\n**Stretch challenge.** Add a tile that uses Claude itself to *summarize* the data in plain English (\"here's what changed since yesterday\").\n\n**Teach-back:** What makes a dashboard *useful* vs. just *busy*?\n\n---\n\n## \ud83c\udfa8 LEVEL 5 \u2014 BUILD THE STOREFRONT\n**Block: Design / Website \u00b7 250 XP \u00b7 Difficulty \u25cf\u25cf\u25cf**\n\n**The story.** No customer sees your folder. They see your **website**. This is where your business becomes real to the outside world \u2014 and where good *design* separates \"looks like a student project\" from \"I'd give them my email.\"\n\n**Mission**\n- Build a real landing page for your business: hero with your value prop, what you offer, social proof or how-it-works, and a clear call-to-action (sign up / buy / book).\n- Make it genuinely well-designed \u2014 spacing, type, color, hierarchy. Use the **design** skills and ask the Guide for a design critique.\n- Get it to where you'd actually show it to a stranger.\n\n**Victory Condition**\n\u2705 A polished, responsive landing page that clearly communicates what your business does and drives one specific action \u2014 and survives an honest design critique from the Guide.\n\n**Your first step:** Write the **hero headline and subhead** *first*, before any visuals. If the words don't sell it, no design will. Run them past the Guide.\n\n**Stretch challenge.** Run an **accessibility review** (contrast, tap targets, readable type) and fix what fails. Real businesses get sued over this; founders who know it stand out.\n\n**Teach-back:** Point at one design choice you made and explain what it does for the visitor.\n\n---\n\n## \ud83c\udf19 LEVEL 6 \u2014 THE NIGHT SHIFT\n**Block: Automation / Scheduled Tasks \u00b7 200 XP \u00b7 Difficulty \u25cf\u25cf\u25cf**\n\n**The story.** The best businesses make money \u2014 or make progress \u2014 while the founder sleeps. A **scheduled task** is work that runs on its own: a morning briefing, a weekly report, a daily scan of something that matters.\n\n**Mission**\n- Identify one thing that should happen *automatically and repeatedly* for your business.\n- Set up a **scheduled task** to run it (e.g. every morning at 7am, every Monday).\n- Have it produce something you'll actually read \u2014 ideally pulling from your dashboard, connectors, or memory.\n\n**Victory Condition**\n\u2705 A scheduled task is set up, will fire on its own cadence, and produces a useful artifact (a brief, a report, an alert) without you lifting a finger.\n\n**Your first step:** Finish this sentence and bring it to the Guide: *\"Every ____, I want to automatically receive ____, so I can ____.\"*\n\n**Stretch challenge.** Chain it: the scheduled task uses a **Skill** you built in Level 1 and reads from your **memory** file. Now your building blocks are working *together* unattended.\n\n**Teach-back:** What's the difference between a task you should automate and one you shouldn't?\n\n---\n\n# \ud83d\udc51 FINAL BOSS \u2014 LAUNCH DAY\n**Block: Everything \u00b7 500 XP \u00b7 Difficulty \u25cf\u25cf\u25cf\u25cf\u25cf**\n\n**The story.** This is it. Every system you built must work *together* as one business.\n\n**The boss fight \u2014 pass all five checks:**\n1. \ud83e\udde0 **Memory** \u2014 A fresh session, and the Guide can brief a stranger on your whole business from your files.\n2. \u2692\ufe0f **Skill** \u2014 A core workflow runs through a saved Skill, on-brand, every time.\n3. \ud83e\udd16 **Agent** \u2014 A real piece of work was delegated to an agent and used.\n4. \ud83d\udd0c **Connector** \u2014 Live (or cleanly simulated) data flows in from a real tool.\n5. \ud83d\udcca **Dashboard + \ud83c\udfa8 Website + \ud83c\udf19 Automation** \u2014 Cockpit reopens with fresh data, the landing page is launch-ready, and at least one thing runs on a schedule.\n\n**Victory Condition**\n\u2705 You can give a 5-minute live demo of your business \u2014 website, dashboard, an agent doing work, an automation firing \u2014 narrating which Claude building block powers each piece.\n\n**The prize.** Ask the Guide to generate your **Founder Quest Certificate** (your name, your business, your final XP, the date) and a one-page \"what I built and learned\" summary you could screenshot for a resume or LinkedIn.\n\n---\n\n# \ud83c\udf96\ufe0f FOUNDER RANKS (XP milestones)\n\n| XP | Rank |\n|----|------|\n| 0\u2013250 | \ud83e\udd5a Garage Tinkerer |\n| 250\u2013600 | \ud83d\udd27 Builder |\n| 600\u20131,100 | \ud83d\ude80 Operator |\n| 1,100\u20131,800 | \ud83e\udde0 Founder |\n| 1,800+ | \ud83d\udc51 CEO (boss defeated) |\n\n*Max XP including all bonuses \u2248 2,500. Aim for CEO.*\n\n---\n\n# \ud83c\udd98 THE HINT LADDER (how to ask the Guide for help)\n\nWhen you're stuck, ask in this order \u2014 the Guide will hold back so you keep learning:\n\n1. **\"Nudge me.\"** \u2192 One sentence pointing you in the right direction.\n2. **\"Warmer?\"** \u2192 Names the specific tool/concept you need.\n3. **\"Walk me to the edge.\"** \u2192 Steps you through *up to* the hard part, then hands it back.\n4. **\"I genuinely need to see it once.\"** \u2192 The Guide shows the move *once*, then immediately gives you a fresh variation to do yourself.\n\n> Burning straight to level 4 hints skips the learning. Stretch mode rewards climbing the ladder slowly.\n\n---\n\n# \ud83d\udcdc PLAYER RULES OF ENGAGEMENT\n\n- **You type the commands. You write the files.** The Guide can show patterns, never do the whole thing.\n- **One business, all game.** Don't start over \u2014 push your idea through every level. Constraints make you creative.\n- **Log your decisions.** Every real choice \u2192 one line in your memory file.\n- **Get stuck on purpose.** The struggle right before the hint is where the learning lives.\n- **Have fun and be bold.** Pick the cooler option. Ship the thing. This is a sandbox with real tools.\n\n*Now go open the assessment, generate your briefing, and paste it to your Guide. Level 0 awaits, founder.* \ud83d\ude80\n";
-document.getElementById('content').innerHTML = marked.parse(SRC);
-</script>
+<div class="top"><a href="index.html">← Home</a><a href="assessment.html">Take the Assessment</a><a href="certificate.html">Certificate</a></div>
+<div class="md">
+<h1>🏆 FOUNDER QUEST</h1>
+<h3>A hands-on game for mastering Claude Code &amp; Cowork by building a real business</h3>
+<blockquote>
+<p><strong>For:</strong> Henry
+<strong>Mode:</strong> Stretch / Challenge
+<strong>The deal:</strong> Claude is your <em>Guide</em>. It poses the challenge and coaches you — but <strong>you</strong> do the building. Every level you clear, you earn XP, level up your company, and unlock a harder one. Beat the final boss and your business is <em>live</em>.</p>
+</blockquote>
+<hr />
+<h2>How this game works</h2>
+<p>You are the <strong>Founder</strong>. Claude is your <strong>Guide</strong> (think: a sharp co-founder who refuses to do your homework for you).</p>
+<p><strong>The loop, every single level:</strong>
+1. The Guide states the <strong>Mission</strong> and the <strong>Victory Condition</strong>.
+2. The Guide gives you the <strong>first small step</strong> — then waits.
+3. <strong>You</strong> try it. You get stuck. That's the point.
+4. You ask for a hint. The Guide gives you <strong>one</strong> hint. Still stuck? Ask again for the next.
+5. You clear the Victory Condition → <strong>XP awarded</strong>, memory updated, next level unlocks.</p>
+<p><strong>The Golden Rule (the Guide is told this in your briefing):</strong></p>
+<blockquote>
+<p>Coach, don't solve. One hint at a time. Make the founder do the work.</p>
+</blockquote>
+<p><strong>Scoring:</strong>
+- Each level has a base XP value.
+- ⚡ <strong>Solo bonus</strong> (+50%): cleared a level without asking for more than one hint.
+- 🧠 <strong>Teach-back bonus</strong> (+25%): explain to the Guide <em>why</em> your solution works, in your own words.
+- 🎖️ Hit XP milestones to earn <strong>Founder Ranks</strong> (see bottom).</p>
+<p><strong>The capabilities you'll master</strong> (each level forces at least one):
+<code>Memory</code> · <code>Skills</code> · <code>Documents (Word/Excel/PDF/Slides)</code> · <code>Research</code> · <code>Images</code> · <code>Agents</code> · <code>Connectors (MCP)</code> · <code>Artifacts/Dashboards</code> · <code>Design/Website</code> · <code>Automation</code> · <code>Browser control</code> · <code>Computer use</code> · <code>Plugins</code></p>
+<p>By the end you'll have touched essentially every capability Claude Cowork has.</p>
+<hr />
+<h1>🗺️ THE CAMPAIGN</h1>
+<pre><code>LVL 0  Found Your Company        →  Memory                          (warmup)
+LVL 1  Teach Claude Your Craft   →  Skills                          ●
+LVL 2  The Paperwork Empire      →  Documents · Sheets · PDF · Deck ●
+LVL 3  Know Your Market          →  Research · Images / Brand       ●●
+LVL 4  Hire Your First Agent     →  Agents / Subagents              ●●
+LVL 5  Wire Up the Real World    →  Connectors (MCP)                ●●
+LVL 6  The Living Dashboard      →  Artifacts                       ●●●
+LVL 7  Build the Storefront      →  Design / Website                ●●●
+LVL 8  The Night Shift           →  Automation                      ●●●
+LVL 9  Command the Machine       →  Browser · Computer use · Plugins ●●●●
+──────────────────────────────────────────────────────────────────────────
+BOSS   Launch Day                →  Everything, together            ●●●●●
+</code></pre>
+<hr />
+<h2>🧭 LEVEL 0 — FOUND YOUR COMPANY</h2>
+<p><strong>Block: Memory · 100 XP · Difficulty ●</strong></p>
+<p><strong>The story.</strong> Every empire starts with a name and a clear reason to exist. Before you build anything, your Guide needs to <em>remember</em> who you are and what you're building — across every future session.</p>
+<p><strong>Mission</strong>
+- Sharpen your business idea with the Guide into one crisp sentence (the "north star").
+- Name the company. Pick a one-line value proposition and your target customer.
+- Create a project folder and a <strong>memory file</strong> capturing: company name, what it does, who it's for, your brand vibe, and your decisions so far.</p>
+<p><strong>Victory Condition</strong>
+✅ You can start a brand-new chat, say "what's my company?", and the Guide recalls it correctly <em>from the memory file</em> — not from the conversation.</p>
+<p><strong>Your first step:</strong> Tell the Guide your rough idea. Let it interview you with 5 sharp questions. Then <em>you</em> write the memory file.</p>
+<p><strong>Stretch challenge.</strong> Add a "Decisions Log" section and make a rule: every real choice (pricing, name, tech) → one line appended. This is how pros keep an AI aligned over months.</p>
+<p><strong>Teach-back:</strong> Why does a memory file beat just having a long conversation?</p>
+<hr />
+<h2>⚒️ LEVEL 1 — TEACH CLAUDE YOUR CRAFT</h2>
+<p><strong>Block: Skills · 150 XP · Difficulty ●</strong></p>
+<p><strong>The story.</strong> You'll do the same tasks over and over — a customer email, a product description, a weekly update. A <em>Skill</em> is you teaching Claude a repeatable workflow once, so it nails it every time.</p>
+<p><strong>Mission</strong>
+- Identify one task your business will need constantly.
+- Build a <strong>Skill</strong> that captures how <em>you</em> want it done — your voice, your format, your rules.
+- Save it so it triggers automatically, then use it twice on two different inputs.</p>
+<p><strong>Victory Condition</strong>
+✅ A saved Skill that fires on the right request and produces output in your defined format — without you re-explaining the rules.</p>
+<p><strong>Your first step:</strong> Pick the task. Tell the Guide. It helps you find the <em>skill-creator</em> tooling — but <strong>you</strong> write the skill's instructions and examples.</p>
+<p><strong>Stretch challenge.</strong> Give the Skill one "do NOT" rule and one worked example, then feed it a tricky input to see if it holds the line.</p>
+<p><strong>Teach-back:</strong> What's the difference between a Skill and a really good one-off prompt?</p>
+<hr />
+<h2>📄 LEVEL 2 — THE PAPERWORK EMPIRE</h2>
+<p><strong>Block: Documents · Spreadsheets · PDF · Slides · 200 XP · Difficulty ●</strong></p>
+<p><strong>The story.</strong> A real business runs on real documents. Cowork doesn't just chat — it makes Word docs, Excel spreadsheets, PDFs, and slide decks. Time to build your company's paperwork.</p>
+<p><strong>Mission</strong>
+- Have Cowork create a <strong>Word document</strong> your business needs (a one-pager, proposal, or service agreement).
+- Build an <strong>Excel spreadsheet</strong> with at least one working formula (a pricing sheet, budget, or simple financial model — lean on your finance brain here).
+- Produce a <strong>client-ready PDF</strong> (a brochure or invoice).
+- Build a short <strong>slide deck</strong> (pptx) — a 5–8 slide pitch for the business.</p>
+<p><strong>Victory Condition</strong>
+✅ Four real files exist — a .docx, an .xlsx with a live formula, a .pdf, and a .pptx — all on-brand for your company.</p>
+<p><strong>Your first step:</strong> Start with the spreadsheet. Ask the Guide to build a pricing or unit-economics sheet — then <em>you</em> add or fix a formula so a total calculates itself.</p>
+<p><strong>Stretch challenge.</strong> Make the deck pull its numbers from your spreadsheet, and ask for speaker notes on each slide.</p>
+<p><strong>Teach-back:</strong> Which of these would save you the most time in a real job, and why?</p>
+<hr />
+<h2>🔎 LEVEL 3 — KNOW YOUR MARKET</h2>
+<p><strong>Block: Research · Images / Brand · 200 XP · Difficulty ●●</strong></p>
+<p><strong>The story.</strong> You can't win a market you don't understand — and you can't stand out without a look. This level is intel plus identity.</p>
+<p><strong>Mission</strong>
+- Use Cowork's <strong>web research</strong> to investigate your market: 3–5 competitors, their pricing, and one gap you could own. Get a sourced summary.
+- Have Cowork <strong>generate images</strong> for your brand: a logo and at least one other visual (hero image, icon set, or social graphic).
+- Save the research to memory and the images to your project.</p>
+<p><strong>Victory Condition</strong>
+✅ A sourced competitive summary in your files, plus a generated logo and a second brand visual you'd actually use.</p>
+<p><strong>Your first step:</strong> Write the research question tightly and give it to the Guide — then push it for <em>sources</em>, not just claims.</p>
+<p><strong>Stretch challenge.</strong> Turn the research into a one-paragraph "positioning statement" and log it in your Decisions Log.</p>
+<p><strong>Teach-back:</strong> How do you tell a trustworthy research summary from a confident-sounding guess?</p>
+<hr />
+<h2>🤖 LEVEL 4 — HIRE YOUR FIRST AGENT</h2>
+<p><strong>Block: Agents / Subagents · 200 XP · Difficulty ●●</strong></p>
+<p><strong>The story.</strong> A founder can't do everything. You delegate. An <strong>agent</strong> is a specialized AI worker you hand a self-contained job to — it goes off, does the work, and reports back without cluttering your main thread.</p>
+<p><strong>Mission</strong>
+- Find a chunky, self-contained job (e.g. "audit 50 product names for trademark risk," or "summarize 10 competitor reviews").
+- Launch an <strong>agent</strong> to do it.
+- Get back a clean, usable deliverable and save it into your project.</p>
+<p><strong>Victory Condition</strong>
+✅ An agent ran an independent multi-step task and returned a result you actually use in a decision.</p>
+<p><strong>Your first step:</strong> Write the job brief so tight a worker who knows nothing about your company could run it. That's the real skill.</p>
+<p><strong>Stretch challenge.</strong> Run <strong>two agents in parallel</strong> and have the Guide help you combine their outputs.</p>
+<p><strong>Teach-back:</strong> When is it worth spinning up an agent vs. just asking the Guide directly?</p>
+<hr />
+<h2>🔌 LEVEL 5 — WIRE UP THE REAL WORLD</h2>
+<p><strong>Block: Connectors (MCP) · 200 XP · Difficulty ●●</strong></p>
+<p><strong>The story.</strong> Real businesses touch real tools — email, calendars, files, payments. <strong>Connectors (MCP)</strong> plug Claude into those tools so it can read and act on live data.</p>
+<p><strong>Mission</strong>
+- Decide the one real tool your business most needs Claude connected to.
+- Use the connector registry to <strong>find and connect</strong> it (ask the Guide to search — don't assume; verify what's offered).
+- Do one real thing through it: read your latest emails, pull events, list files, draft (not send) a message.</p>
+<p><strong>Victory Condition</strong>
+✅ Claude pulled or acted on <strong>live data</strong> from a connected external tool, for a real business purpose.</p>
+<p><strong>Your first step:</strong> Name the tool and the exact task. The Guide helps you search the registry — but <strong>you</strong> decide what's worth connecting and why.</p>
+<p>⚠️ <strong>Safety rule:</strong> never let an agent <em>send</em> money, place orders, or send mass emails unattended. Read, draft, and analyze freely — but you press the final button. Tell the Guide you know this rule.</p>
+<p><strong>Teach-back:</strong> Why is "Claude connected to your real tools" a bigger deal than "Claude that writes good text"?</p>
+<hr />
+<h2>📊 LEVEL 6 — THE LIVING DASHBOARD</h2>
+<p><strong>Block: Artifacts / Dashboards · 250 XP · Difficulty ●●●</strong></p>
+<p><strong>The story.</strong> A founder needs a cockpit — one screen showing the health of the business that refreshes itself. An <strong>artifact</strong> is a self-contained page Claude builds that persists and pulls fresh data every time you open it.</p>
+<p><strong>Mission</strong>
+- Design a one-page <strong>dashboard</strong>: the 3–5 numbers or lists that actually matter.
+- Build it as a live artifact. If you cleared Level 5, wire at least one tile to <strong>real connector data</strong>; otherwise mock it cleanly.
+- Make it look <em>good</em>, not just functional.</p>
+<p><strong>Victory Condition</strong>
+✅ A reopenable dashboard showing your key metrics, with at least one element that updates from a data source — that you'd genuinely glance at each morning.</p>
+<p><strong>Your first step:</strong> Sketch the 4 tiles on paper. Defend each to the Guide: "why does this number matter?" Kill any vanity metric.</p>
+<p><strong>Stretch challenge.</strong> Add a tile that uses Claude to <em>summarize</em> the data in plain English.</p>
+<p><strong>Teach-back:</strong> What makes a dashboard <em>useful</em> vs. just <em>busy</em>?</p>
+<hr />
+<h2>🎨 LEVEL 7 — BUILD THE STOREFRONT</h2>
+<p><strong>Block: Design / Website · 250 XP · Difficulty ●●●</strong></p>
+<p><strong>The story.</strong> No customer sees your folder. They see your <strong>website</strong> — and good <em>design</em> separates "student project" from "I'd give them my email." Use Claude's <strong>design skills</strong> (design critique, UX copy, accessibility) explicitly.</p>
+<p><strong>Mission</strong>
+- Build a real landing page: hero with your value prop, what you offer, social proof or how-it-works, and a clear call-to-action. Use your brand images from Level 3.
+- Make it genuinely well-designed — ask the Guide to use its <strong>design-critique</strong> skill and act on it.
+- Get it to where you'd show it to a stranger.</p>
+<p><strong>Victory Condition</strong>
+✅ A polished, responsive landing page that clearly communicates what you do and drives one action — and survives an honest design critique.</p>
+<p><strong>Your first step:</strong> Write the <strong>hero headline and subhead</strong> first, before visuals. If the words don't sell it, no design will.</p>
+<p><strong>Stretch challenge.</strong> Run an <strong>accessibility review</strong> (contrast, tap targets, readable type) and fix what fails.</p>
+<p><strong>Teach-back:</strong> Point at one design choice and explain what it does for the visitor.</p>
+<hr />
+<h2>🌙 LEVEL 8 — THE NIGHT SHIFT</h2>
+<p><strong>Block: Automation / Scheduled Tasks · 200 XP · Difficulty ●●●</strong></p>
+<p><strong>The story.</strong> The best businesses make progress while the founder sleeps. A <strong>scheduled task</strong> runs on its own — a morning briefing, a weekly report, a daily scan.</p>
+<p><strong>Mission</strong>
+- Identify something that should happen automatically and repeatedly.
+- Set up a <strong>scheduled task</strong> to run it (e.g. every morning at 7am, every Monday).
+- Have it produce something you'll actually read — ideally pulling from your dashboard, connectors, or memory.</p>
+<p><strong>Victory Condition</strong>
+✅ A scheduled task fires on its own cadence and produces a useful artifact without you lifting a finger.</p>
+<p><strong>Your first step:</strong> Finish this sentence for the Guide: <em>"Every <strong><em>_, I want to automatically receive </em></strong>_, so I can ____."</em></p>
+<p><strong>Stretch challenge.</strong> Chain it: the task uses a <strong>Skill</strong> from Level 1 and reads your <strong>memory</strong> file. Now your building blocks work together unattended.</p>
+<p><strong>Teach-back:</strong> What's the difference between a task you <em>should</em> automate and one you shouldn't?</p>
+<hr />
+<h2>🕹️ LEVEL 9 — COMMAND THE MACHINE</h2>
+<p><strong>Block: Browser control · Computer use · Plugins · 250 XP · Difficulty ●●●●</strong></p>
+<p><strong>The story.</strong> Time for the power tools. Cowork can drive a real web browser, control native desktop apps, and load whole capability bundles called plugins. Use all three for your business.</p>
+<p><strong>Mission</strong>
+- <strong>Browser (Claude in Chrome):</strong> have Cowork do a real task in a live browser — gather info from a site, or fill a form for your business. <em>(Needs the Chrome extension connected.)</em>
+- <strong>Computer use:</strong> have Cowork do one small, safe task in a native desktop app. <em>(Depends on your setup — skip if unavailable.)</em>
+- <strong>Plugins:</strong> explore available plugins/marketplaces, install one that fits your business, and use something from it.</p>
+<p><strong>Victory Condition</strong>
+✅ You drove a real browser task, tried a desktop task (or noted it's unavailable), and installed &amp; used a plugin.</p>
+<p><strong>Your first step:</strong> Ask the Guide what's actually available in your setup — browser extension, desktop control, which plugins — <em>then</em> pick the task.</p>
+<p>⚠️ <strong>Safety rule:</strong> verify any link before letting it act; never let it move money, buy, or send on your behalf — you press those buttons.</p>
+<p><strong>Teach-back:</strong> Which of these three would change how you work the most, and why?</p>
+<hr />
+<h1>👑 FINAL BOSS — LAUNCH DAY</h1>
+<p><strong>Block: Everything · 600 XP · Difficulty ●●●●●</strong></p>
+<p><strong>The story.</strong> This is it. Every system you built must work <em>together</em> as one business.</p>
+<p><strong>The boss fight — pass every check:</strong>
+1. 🧠 <strong>Memory</strong> — A fresh session, and the Guide can brief a stranger on your whole business from your files.
+2. ⚒️ <strong>Skill</strong> — A core workflow runs through a saved Skill, on-brand, every time.
+3. 📄 <strong>Documents</strong> — You can produce a doc, sheet, PDF, and deck on demand.
+4. 🔎 <strong>Research + 🖼️ Brand</strong> — Your positioning is backed by research; your look is your own.
+5. 🤖 <strong>Agent</strong> — A real piece of work was delegated to an agent and used.
+6. 🔌 <strong>Connector</strong> — Live (or cleanly simulated) data flows from a real tool.
+7. 📊 <strong>Dashboard + 🎨 Website + 🌙 Automation</strong> — Cockpit refreshes, landing page is launch-ready, something runs on a schedule.
+8. 🕹️ <strong>Power tools</strong> — You've used browser control and a plugin (and tried computer use).</p>
+<p><strong>Victory Condition</strong>
+✅ You can give a 5-minute live demo of your business — website, dashboard, an agent doing work, an automation firing, a plugin in play — narrating which Cowork capability powers each piece.</p>
+<p><strong>The prize.</strong> Ask the Guide to generate your <strong>Founder Quest Certificate</strong> (your name, your business, your final XP, the date) and a one-page "what I built and learned" summary you could screenshot for a resume or LinkedIn.</p>
+<hr />
+<h1>🎖️ FOUNDER RANKS (XP milestones)</h1>
+<table>
+<thead>
+<tr>
+<th>XP</th>
+<th>Rank</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>0–300</td>
+<td>🥚 Garage Tinkerer</td>
+</tr>
+<tr>
+<td>300–800</td>
+<td>🔧 Builder</td>
+</tr>
+<tr>
+<td>800–1,500</td>
+<td>🚀 Operator</td>
+</tr>
+<tr>
+<td>1,500–2,400</td>
+<td>🧠 Founder</td>
+</tr>
+<tr>
+<td>2,400+</td>
+<td>👑 CEO (boss defeated)</td>
+</tr>
+</tbody>
+</table>
+<p><em>Max XP including all bonuses ≈ 3,700. Aim for CEO.</em></p>
+<hr />
+<h1>🆘 THE HINT LADDER (how to ask the Guide for help)</h1>
+<p>When you're stuck, ask in this order — the Guide holds back so you keep learning:</p>
+<ol>
+<li><strong>"Nudge me."</strong> → One sentence pointing you in the right direction.</li>
+<li><strong>"Warmer?"</strong> → Names the specific tool/concept you need.</li>
+<li><strong>"Walk me to the edge."</strong> → Steps you through <em>up to</em> the hard part, then hands it back.</li>
+<li><strong>"I genuinely need to see it once."</strong> → The Guide shows the move <em>once</em>, then gives you a fresh variation to do yourself.</li>
+</ol>
+<blockquote>
+<p>Burning straight to level 4 hints skips the learning. Stretch mode rewards climbing the ladder slowly.</p>
+</blockquote>
+<hr />
+<h1>📜 PLAYER RULES OF ENGAGEMENT</h1>
+<ul>
+<li><strong>You type the commands. You write the files.</strong> The Guide shows patterns, never does the whole thing.</li>
+<li><strong>One business, all game.</strong> Don't start over — push your idea through every level. Constraints make you creative.</li>
+<li><strong>Log your decisions.</strong> Every real choice → one line in your memory file.</li>
+<li><strong>Get stuck on purpose.</strong> The struggle right before the hint is where the learning lives.</li>
+<li><strong>Have fun and be bold.</strong> Pick the cooler option. Ship the thing. This is a sandbox with real tools.</li>
+</ul>
+<p><em>Now go open the assessment, generate your briefing, and paste it to your Guide. Level 0 awaits, founder.</em> 🚀</p>
+</div>
 </body></html>
