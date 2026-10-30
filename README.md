@@ -1,5 +1,8 @@
 # 🏆 Founder Quest
 
+> **Which repo is this?** The **PUBLIC live game built for Henry** — a story-driven way to learn Cowork by building a business.
+> Related: `cowork-academy` (general course for anyone) · `cowork-academy-private` (internal facilitator guide + backups).
+
 A self-paced, hands-on game for learning **Claude Code & Cowork** by building a real business end-to-end — skills, memory, agents, MCP connectors, artifacts/dashboards, a designed website, and automation.
 
 ## ▶️ Play it
